@@ -1,0 +1,12 @@
+.container-fluid {
+  padding-left: 0;
+}
+
+.css-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 0;
+  grid-row-gap: 3em;
+}
+

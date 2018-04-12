@@ -1,0 +1,14 @@
+<p>
+  suggestion works!
+</p>
+<div class="container-fluid">
+  <h1>Test if I can call Result</h1>
+  <div class="css-grid">
+    <div *ngFor="let hit of suggestionservice._sharedResult.hits">
+      <div class="card">
+        <p>{{hit.recipe.label}}</p>
+        <img src={{hit.recipe.image}}>
+      </div>
+    </div>
+  </div>
+</div>
