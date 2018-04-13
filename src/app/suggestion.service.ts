@@ -2,11 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Result} from './model/Result';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Ingredient} from './model/Ingredient';
+
 
 @Injectable()
 export class SuggestionService {
   public _sharedResult: Result;
+  private _ingredient: Ingredient[];
 
   constructor(private http:HttpClient) {
 
@@ -15,6 +17,14 @@ export class SuggestionService {
     return this.http.get<Result>("assets/mockdata.json");
   }
 
+  setData(ingredient: Ingredient[]) {
+    this._ingredient = ingredient;
+  }
+
+
+  getIngredient(): Ingredient[] {
+    return this._ingredient;
+  }
 
   getResult(query: string) {
     console.log(query);

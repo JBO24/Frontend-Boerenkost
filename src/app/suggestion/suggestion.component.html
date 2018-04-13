@@ -7,8 +7,13 @@
     <div *ngFor="let hit of suggestionservice._sharedResult.hits">
       <div class="card">
         <p>{{hit.recipe.label}}</p>
+        <button type="button" class="btn btn-primary" (click)="openModalWithComponent(hit.recipe.ingredients)">See {{hit.recipe.label}}'s ingredients
+        </button>
         <img src={{hit.recipe.image}}>
       </div>
     </div>
   </div>
 </div>
+
+
+
